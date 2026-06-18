@@ -1,0 +1,307 @@
+:root {
+  --primary: #6C25FF;
+  --primary-light: #EDE3FF;
+  --text-dark: #1D1E20;
+  --text-gray: #6B6B6B;
+  --border: #DFDFDF;
+  --bg: #FFFFFF;
+  --error: #DD2727;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.screen {
+  min-height: 100vh;
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Landing screen ---------- */
+.landing {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px 24px 40px;
+}
+
+.landing-art {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.landing-art img {
+  width: 100%;
+  max-width: 320px;
+}
+
+.landing h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.landing p {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.btn-primary {
+  width: 100%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  transition: opacity 0.15s ease;
+}
+
+.btn-primary:disabled {
+  background: #BDBDBD;
+  cursor: not-allowed;
+}
+
+.btn-primary:not(:disabled):hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  width: 100%;
+  background: var(--primary-light);
+  color: var(--text-dark);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.btn-secondary:hover {
+  background: #E3D5FF;
+}
+
+/* ---------- Auth screens (login / signup) ---------- */
+.auth {
+  flex: 1;
+  padding: 28px 24px;
+}
+
+.auth h1 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 14px;
+}
+
+.auth > p.subtitle {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: var(--text-dark);
+  outline: none;
+}
+
+.field input::placeholder {
+  color: #B3B3B3;
+}
+
+.field input:focus {
+  border-color: var(--primary);
+}
+
+.field-error {
+  color: var(--error);
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.radio-group label.field-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.radio-options {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.radio-option input[type='radio'] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+/* ---------- Profile / Account Settings ---------- */
+.profile-header {
+  background: var(--primary);
+  padding: 18px 20px;
+}
+
+.profile-header h2 {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.profile-body {
+  padding: 28px 24px;
+}
+
+.profile-top {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  background: #E0E0E0;
+}
+
+.avatar-fallback {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.avatar-edit {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.avatar-edit svg {
+  width: 11px;
+  height: 11px;
+  fill: #fff;
+}
+
+.profile-name {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.profile-email {
+  font-size: 13px;
+  color: var(--text-gray);
+}
+
+.profile-lorem {
+  font-size: 13px;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+.profile-logout {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.profile-logout button {
+  background: none;
+  color: var(--error);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 380px) {
+  .auth, .landing, .profile-body {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+.landing-spacer { flex: 1; }
